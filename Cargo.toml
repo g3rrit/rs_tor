@@ -4,3 +4,4 @@ version = "0.1.0"
 authors = ["pearisgreen <grproessl@web.de>"]
 
 [dependencies]
+socks = "0.3.1"
