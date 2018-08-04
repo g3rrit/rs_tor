@@ -1,4 +1,4 @@
-mod socks;
+mod tor_socks;
 
 #[cfg(test)]
 mod tests {
@@ -26,11 +26,13 @@ mod tests {
 
     #[test]
     fn msocks_works()  {
-        let stream = socks::get(String::from("www.web.de"), 80);
+        /*
+        let stream = tsocks::get(String::from("www.web.de"), 80);
 
         match stream {
             Ok(_socket) => println!("connected via socks"),
             Err(_err) => panic!("failed")
         }
+        */
     }
 }
