@@ -24,15 +24,15 @@ mod tests {
         }
     }
 
+    use tor_socks;
+
     #[test]
     fn msocks_works()  {
-        /*
         let stream = tsocks::get(String::from("www.web.de"), 80);
 
         match stream {
             Ok(_socket) => println!("connected via socks"),
             Err(_err) => panic!("failed")
         }
-        */
     }
 }
