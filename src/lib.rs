@@ -28,11 +28,11 @@ mod tests {
 
     #[test]
     fn msocks_works()  {
-        let stream = tsocks::get(String::from("www.web.de"), 80);
+        let stream = tor_socks::get(String::from("www.web.de"), 80);
 
-        match stream {
-            Ok(_socket) => println!("connected via socks"),
+        let socket = match stream {
+            Ok(_socket) => _socket,
             Err(_err) => panic!("failed")
-        }
+        };
     }
 }
