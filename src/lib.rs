@@ -1,4 +1,5 @@
 mod tor_socks;
+mod tor_host;
 
 #[cfg(test)]
 mod tests {
@@ -34,5 +35,14 @@ mod tests {
             Ok(_socket) => _socket,
             Err(_err) => panic!("failed")
         };
+    }
+
+    use tor_host::Host;
+    use tor_host::State;
+    #[test]
+    fn host_works() {
+        let host = Host::new();
+
+        host.set_state(State::PAUSED);
     }
 }
