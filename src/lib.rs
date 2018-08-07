@@ -1,6 +1,8 @@
 mod tor_socks;
 mod tor_host;
 
+use std::{thread, time};
+
 #[cfg(test)]
 mod tests {
     extern crate socks;
@@ -41,8 +43,11 @@ mod tests {
     use tor_host::State;
     #[test]
     fn host_works() {
-        let host = Host::new();
+        let mut host = Host::new();
+
+        host.start();
 
         host.set_state(State::PAUSED);
+
     }
 }
