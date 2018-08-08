@@ -1,7 +1,6 @@
 mod tor_socks;
 mod tor_host;
 
-use std::{thread, time};
 
 #[cfg(test)]
 mod tests {
@@ -41,13 +40,15 @@ mod tests {
 
     use tor_host::Host;
     use tor_host::State;
+    use std::{thread, time};
     #[test]
     fn host_works() {
-        let mut host = Host::new();
-
-        host.start();
+        let mut host = Host::start(|s| {
+            println!("hello");
+        });
 
         host.set_state(State::PAUSED);
 
+    thread::sleep(time::Duration::from_millis(10000));
     }
 }
