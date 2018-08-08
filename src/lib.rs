@@ -1,7 +1,6 @@
 mod tor_socks;
 mod tor_host;
 
-
 #[cfg(test)]
 mod tests {
     extern crate socks;

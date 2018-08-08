@@ -1,5 +1,5 @@
 [package]
-name = "rs-tor"
+name = "rs_tor"
 version = "0.1.0"
 authors = ["pearisgreen <grproessl@web.de>"]
 
