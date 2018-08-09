@@ -1,6 +1,9 @@
 pub mod tor_socks;
 pub mod tor_host;
 
+pub use tor_socks as ts;
+pub use tor_host as th;
+
 #[cfg(test)]
 mod tests {
     extern crate socks;
