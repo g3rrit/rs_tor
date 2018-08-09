@@ -1,6 +1,5 @@
 pub mod tor_socks;
 pub mod tor_host;
-pub use tor_socks;
 
 #[cfg(test)]
 mod tests {
