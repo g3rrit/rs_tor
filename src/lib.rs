@@ -1,8 +1,6 @@
 pub mod tor_socks;
 pub mod tor_host;
-
-pub use tor_socks as ts;
-pub use tor_host as th;
+pub mod tor_controller;
 
 #[cfg(test)]
 mod tests {
@@ -51,6 +49,16 @@ mod tests {
 
         host.set_state(State::PAUSED);
 
-    thread::sleep(time::Duration::from_millis(10000));
+    }
+
+    use tor_controller::Controller;
+    #[test]
+    fn controller_works() {
+        let mut controller = match Controller::new(String::from("./tor_bin")) {
+            Ok(ok) => ok,
+            Err(err) => panic!("error creating controller: {}", err),
+        };
+
+        controller.stop()
     }
 }
