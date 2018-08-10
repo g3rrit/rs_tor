@@ -45,7 +45,7 @@ mod tests {
     fn host_works() {
         let mut host = Host::start(|s| {
             println!("hello");
-        });
+        }).unwrap();
 
         host.set_state(State::PAUSED);
 
@@ -59,6 +59,6 @@ mod tests {
             Err(err) => panic!("error creating controller: {}", err),
         };
 
-        controller.stop()
+        controller.stop().expect("stopping controller");
     }
 }

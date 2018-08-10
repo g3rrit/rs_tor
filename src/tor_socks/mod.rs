@@ -12,6 +12,6 @@ pub fn get(target: String, port: u16) -> io::Result<TcpStream> {
     let stream = socks::Socks5Stream::connect(local, target);
     match stream {
         Ok(socket) => Ok(socket.into_inner()),
-        Err(err) => Err(err)
+        Err(err) => Err(err),
     }
 }
